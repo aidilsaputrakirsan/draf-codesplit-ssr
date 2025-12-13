@@ -3,7 +3,9 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "build": "vite build",
+        "build": "vite build && vite build --ssr",
+        "build:client": "vite build",
+        "build:ssr": "vite build --ssr",
         "dev": "vite"
     },
     "devDependencies": {
@@ -17,6 +19,7 @@
     },
     "dependencies": {
         "@inertiajs/vue3": "^2.3.1",
+        "@vue/server-renderer": "^3.5.25",
         "vue": "^3.5.25"
     }
 }

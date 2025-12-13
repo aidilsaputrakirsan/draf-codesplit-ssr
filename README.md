@@ -1,59 +1,193 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Penelitian SSR & Code Splitting - Laravel Inertia.js
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Judul Penelitian
 
-## About Laravel
+**Implementasi Server-Side Rendering (SSR) dan Code Splitting pada Aplikasi Laravel Berbasis Inertia.js untuk Meningkatkan First Contentful Paint (FCP)**
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Deskripsi
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Project ini merupakan penelitian akademis yang bertujuan untuk mengukur dampak implementasi SSR (Server-Side Rendering) dan Code Splitting terhadap performa web, khususnya metrik First Contentful Paint (FCP).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Aplikasi yang dibangun adalah **E-Commerce sederhana** dengan fitur:
+- Halaman Welcome (landing page)
+- Daftar Produk (dengan search, filter, sort, pagination)
+- Detail Produk (dengan produk terkait)
+- Keranjang Belanja (CRUD operations)
 
-## Learning Laravel
+## Tech Stack
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+| Teknologi | Versi |
+|-----------|-------|
+| Laravel | 12.x |
+| Inertia.js | 2.x |
+| Vue.js | 3.x |
+| Tailwind CSS | 4.x |
+| Vite | 7.x |
+| PHP | 8.3+ |
+| MySQL | 8.x |
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Hasil Penelitian
 
-## Laravel Sponsors
+### Peningkatan FCP (First Contentful Paint)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+| Halaman | CSR (Baseline) | SSR + Code Split | Improvement |
+|---------|----------------|------------------|-------------|
+| Welcome | 6.23 s | 2.67 s | **57.14%** |
+| Products | 6.67 s | 3.87 s | **41.98%** |
+| Product Detail | 6.67 s | 4.2 s | **37.03%** |
+| Cart | 6.97 s | 3.27 s | **53.08%** |
+| **Rata-rata** | **6.64 s** | **3.50 s** | **47.29%** |
 
-### Premium Partners
+### Peningkatan Performance Score
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+| Halaman | CSR | SSR + Code Split | Improvement |
+|---------|-----|------------------|-------------|
+| Welcome | 56.67 | 92.33 | **+35.66** |
+| Products | 57.67 | 68.33 | **+10.66** |
+| Product Detail | 45.67 | 58 | **+12.33** |
+| Cart | 58.33 | 80.33 | **+22.00** |
+| **Rata-rata** | **54.59** | **74.75** | **+20.16** |
 
-## Contributing
+> Dokumentasi lengkap hasil pengukuran: [PENGUKURAN_PERFORMA.md](PENGUKURAN_PERFORMA.md)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Instalasi
 
-## Code of Conduct
+### Prerequisites
+- PHP 8.3+
+- Composer
+- Node.js 18+
+- MySQL 8.x
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### Langkah Instalasi
 
-## Security Vulnerabilities
+```bash
+# 1. Clone repository
+git clone <repository-url>
+cd penelitian_ssr-codesplitting
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+# 2. Install PHP dependencies
+composer install
 
-## License
+# 3. Install Node dependencies
+npm install
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+# 4. Setup environment
+cp .env.example .env
+php artisan key:generate
+
+# 5. Konfigurasi database di .env
+# DB_DATABASE=penelitian_ssr_db
+# DB_USERNAME=root
+# DB_PASSWORD=your_password
+
+# 6. Jalankan migration dan seeder
+php artisan migrate
+php artisan db:seed
+
+# 7. Build assets
+npm run build
+```
+
+## Menjalankan Aplikasi
+
+### Mode Development (CSR)
+```bash
+# Terminal 1 - Laravel Server
+php artisan serve
+
+# Terminal 2 - Vite Dev Server
+npm run dev
+```
+
+### Mode Production dengan SSR
+```bash
+# 1. Build production assets
+npm run build
+
+# Terminal 1 - Laravel Server
+php artisan serve
+
+# Terminal 2 - SSR Server
+php artisan inertia:start-ssr
+```
+
+Aplikasi dapat diakses di: http://127.0.0.1:8000
+
+## Struktur Project
+
+```
+├── app/
+│   ├── Http/Controllers/
+│   │   ├── ProductController.php    # CRUD Produk
+│   │   └── CartController.php       # CRUD Keranjang
+│   └── Models/
+│       ├── Product.php
+│       ├── Cart.php
+│       └── CartItem.php
+├── resources/js/
+│   ├── app.js                       # Client entry point
+│   ├── ssr.js                       # SSR entry point
+│   ├── Pages/
+│   │   ├── Welcome.vue
+│   │   ├── Products/
+│   │   │   ├── Index.vue
+│   │   │   └── Show.vue
+│   │   └── Cart/
+│   │       └── Index.vue
+│   ├── Components/
+│   │   ├── Navbar.vue
+│   │   ├── Footer.vue
+│   │   └── ProductCard.vue
+│   └── Layouts/
+│       └── AppLayout.vue
+├── config/
+│   └── inertia.php                  # Konfigurasi SSR
+├── vite.config.js                   # Konfigurasi Vite + SSR
+├── PENGUKURAN_PERFORMA.md           # Hasil pengukuran
+└── README.md
+```
+
+## Konfigurasi SSR
+
+### vite.config.js
+```javascript
+laravel({
+    input: ['resources/css/app.css', 'resources/js/app.js'],
+    ssr: 'resources/js/ssr.js',
+    refresh: true,
+}),
+```
+
+### config/inertia.php
+```php
+'ssr' => [
+    'enabled' => true,
+    'url' => 'http://127.0.0.1:13714',
+],
+```
+
+## Pengukuran Performa
+
+Pengukuran dilakukan menggunakan **Google Lighthouse** dengan kondisi:
+- Mode: Navigation
+- Device: Mobile
+- Network: Simulated Slow 4G
+- CPU: 4x Slowdown
+
+Setiap halaman diukur **3 kali** dan diambil rata-ratanya.
+
+## Kesimpulan
+
+Implementasi SSR dan Code Splitting pada aplikasi Laravel berbasis Inertia.js **berhasil meningkatkan performa** secara signifikan:
+
+1. **FCP meningkat rata-rata 47.29%** (dari 6.64s menjadi 3.50s)
+2. **LCP meningkat rata-rata 55.12%** (dari 10.25s menjadi 4.60s)
+3. **Performance Score naik +20.16 poin** (dari 54.59 menjadi 74.75)
+
+## Lisensi
+
+Project ini dibuat untuk keperluan penelitian akademis.
+
+## Kontak
+
+Untuk pertanyaan terkait penelitian ini, silakan hubungi peneliti.

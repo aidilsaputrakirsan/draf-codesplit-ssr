@@ -1,0 +1,37 @@
+{
+  "\u0000plugin-vue:export-helper": [
+    "/build/assets/ProductCard-BhvmSdPG.js",
+    "/build/assets/ProductCard-Bfk1V-jQ.css"
+  ],
+  "node_modules/laravel-vite-plugin/inertia-helpers/index.js": [],
+  "resources/js/Components/Footer.vue": [
+    "/build/assets/AppLayout-CUJee67w.js"
+  ],
+  "resources/js/Components/Navbar.vue": [
+    "/build/assets/AppLayout-CUJee67w.js"
+  ],
+  "resources/js/Components/ProductCard.vue": [
+    "/build/assets/ProductCard-BhvmSdPG.js",
+    "/build/assets/ProductCard-Bfk1V-jQ.css"
+  ],
+  "resources/js/Components/ProductCard.vue?vue&type=style&index=0&scoped=909c6725&lang.css": [
+    "/build/assets/ProductCard-BhvmSdPG.js",
+    "/build/assets/ProductCard-Bfk1V-jQ.css"
+  ],
+  "resources/js/Layouts/AppLayout.vue": [
+    "/build/assets/AppLayout-CUJee67w.js"
+  ],
+  "resources/js/Pages/Cart/Index.vue": [
+    "/build/assets/Index-CBe2Y9su.js"
+  ],
+  "resources/js/Pages/Products/Index.vue": [
+    "/build/assets/Index-hKw0iolI.js"
+  ],
+  "resources/js/Pages/Products/Show.vue": [
+    "/build/assets/Show-Cn8zVTRZ.js"
+  ],
+  "resources/js/Pages/Welcome.vue": [
+    "/build/assets/Welcome-Cg5eUm6j.js"
+  ],
+  "resources/js/ssr.js": []
+}
